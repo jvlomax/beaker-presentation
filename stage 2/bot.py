@@ -8,9 +8,13 @@ class SkypeBot(object):
 
     def MessageStatus(self, msg, status):
         print(status)        
-        if status == Skype4Py.cmsReceived:        
-              
+        if status == Skype4Py.cmsReceived:                    
             msg.Chat.SendMessage(msg.Body)
+
+            #if "cloud" in msg.Body:
+             #   msg.Chat.SendMessage(msg.Body.replace("cloud", "butt"))
+
+
 
 if __name__ == "__main__":
     bot = SkypeBot()
