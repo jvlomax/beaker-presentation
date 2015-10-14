@@ -7,13 +7,22 @@ It shows how to create a bot for skype from scratch using the Skype4Py library.
 * Python2.7
 * Skype4Py
 
+## Usage
+The folders stage 1-5 show the progression when createing the bot. The first 3 stages cover the basics.
+Staged 4-5 show more advanced topics, such as plugins and dynamic loading of modules to allow plugins to be created at runtime.
+
 #### Warning
-This project contains code that is unsafe. Loading unkown python module at run time is a bad idea, don't do it!
+Most of this code was written while discovering my fondness for scotch whisky. This may be reflected in the quality of the code.
+
+This project also contains code that is very unsafe. Loading unkown python modules at runtime is a bad idea, don't do it!
 
 **You have been warned!**
+
 
 ***
 ##### Credits
 Author: Jørn Lomax (jvlomax)
 
-Contributers: Christopher Haugen (chrihau)
+Contributers: 
+* Christopher Haugen (chrihau)
+* Bård Hanssen (saftblander)
