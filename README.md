@@ -23,4 +23,6 @@ This project also contains code that is very unsafe. Loading unkown python modul
 ##### Credits
 Author: Jørn Lomax (jvlomax)
 
-Contributers: Christopher Haugen (chrihau)
+Contributers: 
+* Christopher Haugen (chrihau)
+* Bård Hanssen (saftblander)
