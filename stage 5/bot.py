@@ -7,10 +7,18 @@ class SkypeBot(object):
     def __init__(self):
         self.tag = "@"
         self.client = Skype4Py.Skype(Events=self)
-
+        self.plugins = []
+        self.load_plugins()
+        # This is a more advanced feature
+        plugin_names = [type(x).__name__for x in self.plugins]
+        print("Loaded plugins: {}".format(" ".join(plugin_names)))
     def MessageStatus(self, msg, status):      
-        if status == Skype4Py.cmsReceived and msg.Body[0] == self.tag:                    
+        if status == Skype4Py.cmsReceived and msg.Body[0] == self.tag:      
+        
             command = msg.Body.split(" ")[1:]
+            for plugin in self.enabled_plugins
+                if plugin == command:
+                    plugin.message_received(status, msg)
             if command == "help":
                 msg.Chat.SendMessage("Welcome to beaker skype bot help")
             if command == "commands":
@@ -37,7 +45,7 @@ class SkypeBot(object):
                     try:
                         if issubclass(class_object, Plugin):    # If the object is a subclass of plugin, this is the correct class
                             instance = class_object(self.skype) # Create an instance of the object
-                            self.plugin_classlist.append(instance) # Add the instance to our list of plugins
+                            self.plugins.append(instance) # Add the instance to our list of plugins
                     except:
                         pass                                    # This is a different class, not what we are looking for
 

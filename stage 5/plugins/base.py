@@ -9,7 +9,7 @@ class Plugin(object):
         self.command = command
 
     @abstractmethod
-    def message_received(self, args, status, msg):
+    def message_received(self, status, msg):
         pass
 
     def help(self, msg):

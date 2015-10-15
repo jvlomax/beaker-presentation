@@ -1,5 +1,11 @@
 from datetime import datetime
+import base
 
-
-def give_time(msg):
-    msg.Chat.SendMessage("The time is {}".format(datetime.now())
+class Time(base)
+    def __init__(self, *args, **kwargs):
+        super(Time, self).__init__(*args, **kwargs)
+        self.command = "time"
+    
+    def message_received(self, status, msg):
+        msg.Chat.SendMessage("The time is {}".format(datetime.now())
+    
